@@ -1,0 +1,22 @@
+# Sensitive files and directories to ignore
+.env
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets.json
+config/*.json
+config/*.yml
+config/*.yaml
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+node_modules/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
