@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const authRouter = require('./routes/authRouter');
 const userRouter = require('./routes/userRouter');
 
 const db = require('./database/db');
@@ -9,6 +10,7 @@ const app = express();
 app.use(cors());
 
 app.use(bodyParser.json());
+app.use('/api', authRouter);
 app.use('/api', userRouter);
 
 const port = 3000;
