@@ -4,7 +4,7 @@ const repairSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
   repairTime: { type: String, required: true },
-  imgURL: { type: String, required: true, unique: true },
+  imgURL: { type: String, required: true },
   deviceId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Device',

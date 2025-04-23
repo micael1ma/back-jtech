@@ -2,7 +2,17 @@ const Device = require('../model/device');
 
 const getAllDevices = async (req, res) => {
   const devices = await Device.find();
-  res.json(devices);
+  const devicesWithRepairs = await Device.aggregate([
+    {
+      $lookup: {
+        from: 'repairs', // nome da coleção no banco
+        localField: '_id', // campo em Device
+        foreignField: 'deviceId', // campo em Repair
+        as: 'repairs', // nome do campo que vai conter os repairs
+      },
+    },
+  ]);
+  res.json(devicesWithRepairs);
 };
 
 const createDevice = async (req, res) => {

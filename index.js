@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const authRouter = require('./routes/authRouter');
 const deviceRouter = require('./routes/deviceRouter');
+const repairRouter = require('./routes/repairRouter');
 const userRouter = require('./routes/userRouter');
 
 const db = require('./database/db');
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', authRouter);
 app.use('/api', deviceRouter);
+app.use('/api', repairRouter);
 app.use('/api', userRouter);
 
 const port = 3000;
